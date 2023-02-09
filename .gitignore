@@ -1,0 +1,9 @@
+# project specific ignroes
+node_modules/
+dist/
+
+# IDE specific ignores
+.idea/
+*.iml
+*.
+

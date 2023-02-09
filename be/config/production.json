@@ -1,0 +1,7 @@
+{
+    "mongoURI": "mongodb://weather_root:Passw0rd@127.0.0.1:27017/weather?authSource=admin",
+    "jwtSecret": "ProductionJWTSecret",
+    "jwtExpirationInSeconds": 600,
+    "jwtMaxSessionLengthInSeconds": 14400,
+    "jwtRefreshDelayInSeconds": 30
+}

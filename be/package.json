@@ -1,0 +1,44 @@
+{
+  "name": "weather-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend server for weather app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "production-build": "npm run build --prefix ../client && shx rm ../client/build/static/js/*.js.map",
+    "production-start": "npm run production-build && cross-env NODE_ENV=production npm start",
+    "server": "nodemon server",
+    "client": "npm start --prefix ../client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "prettier": "npx prettier --write ."
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "Tomas Svrcek",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "config": "^3.3.9",
+    "express": "^4.18.2",
+    "lodash": "^4.17.20",
+    "mongoose": "^6.9.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "express-swagger-generator": "^1.1.17",
+    "husky": "4.3.6",
+    "lint-staged": "10.5.3",
+    "nodemon": "^2.0.4",
+    "prettier": "2.8.3",
+    "shx": "^0.3.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
+  }
+}
